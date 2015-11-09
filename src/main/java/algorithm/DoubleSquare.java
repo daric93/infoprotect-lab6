@@ -47,8 +47,7 @@ public class DoubleSquare {
         return table;
     }
 
-    public String encode(String text, String key1, String key2) throws IOException {
-        //String text = read(file);
+    public String encode(String text, String key1, String key2){
         char[][] table1 = table(key1);
         char[][] table2 = table(key2);
         StringBuilder strBuff = new StringBuilder();
@@ -59,7 +58,6 @@ public class DoubleSquare {
         }
         if (strBuff.charAt(strBuff.length() - 1) == '\u0000')
             return strBuff.substring(0, strBuff.length() - 1);
-        //write(strBuff.toString(),file);
         return strBuff.toString();
     }
 
@@ -92,20 +90,4 @@ public class DoubleSquare {
         }
         return ch;
     }
-
-    /*private String read(File in) throws FileNotFoundException {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (Scanner scR = new Scanner(in)) {
-            while (scR.hasNextLine()) {
-                stringBuilder.append(scR.nextLine());
-            }
-        }
-        return stringBuilder.toString();
-    }
-
-    private void write(String text,File in) throws IOException {
-        try (FileWriter fileWriter = new FileWriter(in, false)) {
-            fileWriter.write(text);
-        }
-    }*/
 }
